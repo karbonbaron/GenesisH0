@@ -2,12 +2,30 @@
 A python script for creating the parameters required for a unique genesis block. SHA256/scrypt/X11/X13/X15.
 
 ### Dependencies
-    sudo pip install scrypt construct==2.5.2
+    sudo pip install scrypt==0.8.3 construct==2.5.2
+#    sudo pip install scrypt construct==2.5.2
 
 To create geneses based on X11 algorithm you will also need to install the [xcoin-hash](https://github.com/lhartikk/xcoin-hash) module. 
 For X13 you will need the [x13_hash](https://github.com/sherlockcoin/X13-PythonHash) module and for X15 the [x15_hash](https://github.com/minings/x15_hash) module.
     
 ### Examples
+Monicoin
+
+genesis2.py -z "Monicoin is hereby issued as official Vsetec coin named after my beloved wife Monika 21. 1. 2021" -t 1613941931 -n 2 -b 0x20000010
+
+04ffff001d01044c604d6f6e69636f696e2069732068657265627920697373756564206173206f6666696369616c2056736574656320636f696e206e616d6564206166746572206d792062656c6f7665642077696665204d6f6e696b612032312e20312e2032303231
+algorithm: SHA256
+merkle hash: 7a33e9f704ca0446837c696e6f908ceeb2cce2efb9a1d4339ff38b1b8c0079f8
+pszTimestamp: Monicoin is hereby issued as official Vsetec coin named after my beloved wife Monika 21. 1. 2021
+pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
+time: 1613941931
+bits: 0x20000010
+Searching for genesis hash..
+genesis hash found!
+nonce: 81619
+genesis hash: 00000eb89fe64d00c73e308e9c332157218e88b5e6635c949b96d2bc277148dc
+
+
 Create the original genesis hash found in Bitcoin
 
     python genesis.py -z "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks" -n 2083236893 -t 1231006505
